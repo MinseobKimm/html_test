@@ -14,7 +14,7 @@ function output(){
     trans(input2,input1);
     makeFunc();
     if(check!=input1){
-      Output= '다항식이 존재하지 않습니다. 계산실수가 있는지 확인해주세요.'+Output+result;
+      Output= '다항식이 존재하지 않습니다. 계산실수가 있는지 확인해주세요.';
     }
     document.getElementById("output").innerText = Output;
   }
