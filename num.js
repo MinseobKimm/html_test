@@ -14,7 +14,7 @@ function output(){
     trans(input2,input1);
     makeFunc();
     if(check!=input1){
-      Output= '다항식이 존재하지 않습니다. 계산실수가 있는지 확인해주세요.';
+      Output= '다항식이 존재하지 않습니다. 계산실수가 있는지 확인해주세요.'+Output+result;
     }
     document.getElementById("output").innerText = Output;
   }
@@ -36,17 +36,23 @@ function makeFunc(){
   var i;
   for(i=0;i<result.length;i++){
 
-    if(result.charCodeAt(i)>=65&&result.charCodeAt(i)<=90){
+    if(result.charCodeAt(i)>=65){
       Output+=(result.charCodeAt(i)-65+10);
       check+=parseInt(result.charCodeAt(i)-65+10);
     }else{
+      if(result.charAt(i)==0)continue;
       Output+=result.charAt(i);
       check+=parseInt(result.charAt(i));
+      
     }
-
+    
     if(i!=result.length-1){
       Output+="x^"+(result.length-i-1)+"+";
     }
   }
   return; 
 }
+
+
+    
+    
